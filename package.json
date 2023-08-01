@@ -1,0 +1,19 @@
+{
+  "name": "proyecto-final",
+  "version": "1.0.0",
+  "description": "<h1>Proyecto Final para el curso de Desarrollo Web</h1>\r <p>Como proyecto final decidí realizar el sitio web del emprendimiento de una cafetería.</p>",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0xluish/JavaScript.git"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/0xluish/JavaScript/issues"
+  },
+  "homepage": "https://github.com/0xluish/JavaScript#readme"
+}

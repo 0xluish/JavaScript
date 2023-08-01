@@ -4,10 +4,10 @@
 <h2>:bangbang: Importante :bangbang:</h2>
 <p>La web contiene un menú de navegación con dropdown, links e íconos funcionales, imágenes, mapas y transiciones.</p>
 <p>El sitio web es responsive en celulares, tabletas y desktop.</p>
-<p>Puedes visualizar el sitio web desplegado :point_right: <a href="https://0xluish.github.io/Desarrollo-Web/" target="_blank">aquí</a> :point_left:</p>
+<p>Puedes visualizar el sitio web desplegado :point_right: <a href="https://0xluish.github.io/JavaScript/" target="_blank">aquí</a> :point_left:</p>
 
 <h2>Roadmap de la carrera :hourglass_flowing_sand:</h2>
-<p>A lo largo del año actualizaré los proyectos del curso Fullstack (puedes ver más <a href="https://github.com/0xluish/Carrera-Fullstack">aquí</a>). Da click en cada módulo para ir directamente a su repositorio.</p>
+<p>A lo largo del año actualizaré los proyectos del curso Frontend (puedes ver más <a href="https://github.com/0xluish/Carrera-Fullstack">aquí</a>). Da click en cada módulo para ir directamente a su repositorio.</p>
 <ol>
     <li><a href="https://github.com/0xluish/Desarrollo-Web">Desarrollo Web</a> (Diciembre 2022 - Febrero 2023)</li>
     <li><!--<a href="https://github.com/0xluish/JavaScript">JavaScript</a>-->
