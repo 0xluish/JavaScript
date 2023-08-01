@@ -1,0 +1,14 @@
+// Grids
+
+// Grid Home
+#gridBody{
+  display: grid;
+  grid-template-areas: 
+  "header"
+  "galeria-carrusel"
+  "img-home"
+  "footerGeneral";
+  grid-template-columns: max-content;
+  grid-template-rows: max-content;
+  background-color: none;
+}

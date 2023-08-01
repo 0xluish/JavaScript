@@ -1,0 +1,18 @@
+// Reset/normalize
+
+// Añadirlo siempre como primera línea para quitar márgenes y paddings por default de los exploradores, ya que está fuera de nuestro alcance.
+*{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+// Añadir max-width: 100%; siempre para poder mantener siempre la vista de la imagen, a pesar de que se achique la pantalla.
+img{
+    max-width: 100%;
+}
+
+iframe{
+    max-width: 100%;
+}

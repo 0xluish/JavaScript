@@ -1,0 +1,20 @@
+@import "base/reset";
+
+@import "views/home";
+@import "views/contact";
+
+@import "base/typo";
+
+@import "layout/header";
+@import "layout/navegacion";
+@import "layout/footer";
+@import "layout/carousel";
+@import "layout/forms";
+@import "layout/grid";
+@import "layout/productos";
+@import "layout/productosWork";
+@import "layout/flexRest";
+@import "layout/flexWork";
+
+@import "utilities/mixins";
+@import "utilities/variables";

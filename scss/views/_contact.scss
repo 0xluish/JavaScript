@@ -1,0 +1,105 @@
+// Estilos de la página de contacto
+.avatar{
+    display: flex;
+    border-radius: 50%;
+    height: 260px;
+    width: 260px;
+    max-width: 100%;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contacto */
+#gridContacto{
+    display: grid;
+    grid-template-areas: 
+    "about form";
+    grid-template-rows: 2fr;
+    grid-template-columns: repeat(2,2fr);
+    row-gap: 10px;
+    column-gap: 10px;
+    margin: 10px;
+}
+
+#about p{
+    margin-top: 10px;
+}
+
+#form{
+    grid-area: form;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    label,input{
+        padding: 1px;
+        margin: 1px;
+    }
+}
+
+#tablaContacto{
+    width: 500px;
+    height: auto;
+    max-width: 100%;
+    label{
+        display: flex;
+        width: 160px;
+        justify-content: start;
+        align-items: stretch;
+    }
+    input{
+        display: flex;
+        justify-content: end;
+    }
+}
+
+#botonesContacto{
+    width: 500px;
+    height: auto;
+    max-width: 100%;
+    margin: 10px;
+    padding: 10px;
+}
+
+.botonContacto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 1024px){
+    #gridContacto{
+        background-color: yellow;
+        display: grid;
+        grid-template-areas: 
+        "about"
+        "form";
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2,auto);
+        row-gap: 5px;
+        margin: 10px;
+    }
+    
+    #about{
+        .avatar{
+            display: flex;
+            border-radius: 50%;
+            height: 100px;
+            width: 100px;
+            max-width: 100%;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+    }
+    #form{
+        justify-content: center;
+        align-items: center;
+        .formulario{
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

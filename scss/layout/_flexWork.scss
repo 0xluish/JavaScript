@@ -1,0 +1,41 @@
+#imagenWork{
+    max-width: 100%;
+    width: 800px;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 10px;
+}
+
+.productosTienda{
+    display: flex;
+    flex-flow: row nowrap;
+    margin: 5px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.mapaWork{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 5px;
+    padding: 5px;
+}
+
+.mapaWork table,td{
+    margin-left: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    .dia{
+        width: 200px;
+        text-align: left;
+    }
+    .horario{
+        width: 100px;
+        text-align: end;
+    }
+}
