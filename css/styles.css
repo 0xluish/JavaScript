@@ -142,11 +142,12 @@ iframe {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50%;
+  height: auto;
   width: 30%;
   margin: auto;
   cursor: pointer;
   overflow: hidden;
+  margin-top: 10px;
 }
 
 #img-social {
@@ -243,8 +244,8 @@ iframe {
   text-align: center;
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
-  background-color: #a675e0;
-  color: #000000;
+  background-color: #111111;
+  color: #ffffff;
   vertical-align: text-bottom;
   height: 130px;
   min-width: 100vw;

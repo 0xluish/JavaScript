@@ -32,9 +32,4 @@
 <a href="https://www.coderhouse.com" target="_blank">Coderhouse</br></a>
 <a href="https://www.linkedin.com/in/medinataribadaniel/" target="_blank">Profesor Daniel Medina</br></a>
 <a href="https://readme.so/editor" target="_blank">README.md Template</a>
-
-<h3>Y un agradecimiento especial a las dos diseñadoras que me apoyaron y prestaron su marca y material para poder realizar este proyecto, les invito a ver su portafolio:</br></h3>
-<ul>
-    <li><a href="https://www.behance.net/metztliruiz" target="_blank">Metztli Ruiz</a></li>
-    <li><a href="https://www.behance.net/anasofaesqueda" target="_blank">Sofía Esqueda</a></li>
-</ul>
+<a href="https://tablericons.com/" target="_blank">Open source free SVG icons</a>
