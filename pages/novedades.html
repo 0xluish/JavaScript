@@ -49,11 +49,37 @@
   </header>
 
   <h1>Productos de temporada</h1>
-  <div id="sorting-buttons">
-    <button onclick="sortProductsByPriceAsc()">Ordenar por precio ascendente</button>
-    <button onclick="sortProductsByPriceDesc()">Ordenar por precio descendente</button>
+  <div class="container">
+    <div class="cards">
+      <!-- Card 1 -->
+      <div class="card" id="card1">
+        <img src="../img/productos/Pegasus 33.webp" alt="Pegasus 33">
+        <h3>Pegasus 33</h3>
+        <p>Precio: $100</p>
+        <button class="add-to-cart" data-id="1">Agregar al carrito</button>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card" id="card2">
+        <img src="../img/productos/Pegasus 34.webp" alt="Pegasus 34">
+        <h3>Pegasus 34</h3>
+        <p>Precio: $200</p>
+        <button class="add-to-cart" data-id="2">Agregar al carrito</button>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card" id="card3">
+        <img src="../img/productos/Pegasus Trail 2.webp" alt="Pegasus Trail 2">
+        <h3>Pegasus Trail 2</h3>
+        <p>Precio: $150</p>
+        <button class="add-to-cart" data-id="3">Agregar al carrito</button>
+      </div>
+    </div>
+    <div class="cart">
+      <h2>Carrito de compras</h2>
+      <ul id="cart-items"></ul>
+    </div>
   </div>
-  <div id="products"></div>
 
   <footer class="footerGeneral">
     <div>

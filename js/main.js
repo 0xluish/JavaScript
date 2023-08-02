@@ -1,28 +1,67 @@
-// Datos de productos
-const productsData = [
-    { "id": 1, "name": "Producto 1", "price": 10 },
-    { "id": 2, "name": "Producto 2", "price": 20 },
-    { "id": 3, "name": "Producto 3", "price": 30 }
+// Productos
+const products = [
+    { id: 1, name: "Pegasus 33", price: 100 },
+    { id: 2, name: "Pegasus 34", price: 200 },
+    { id: 3, name: "Pegasus Trail 2", price: 150 }
 ];
 
-// Obtener el contenedor de productos
-const productsContainer = document.getElementById('products');
+// Obtener el carrito desde el storage o crear uno vacío
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-// Cargar productos al cargar la página
-document.addEventListener('DOMContentLoaded', loadProducts);
+// Evento al cargar la página
+document.addEventListener("DOMContentLoaded", () => {
+    // Cargar los productos en las cards
+    displayProducts();
 
-// Función para cargar los productos
-function loadProducts() {
-    const products = JSON.parse(localStorage.getItem('products')) || productsData;
-
-    // Limpiar contenedor de productos
-    productsContainer.innerHTML = '';
-
-    // Mostrar los productos en el contenedor
-    products.forEach(product => {
-        const productElement = createProductElement(product);
-        productsContainer.appendChild(productElement);
+    // Evento click en los botones "Agregar al carrito"
+    const addToCartButtons = document.querySelectorAll(".add-to-cart");
+    addToCartButtons.forEach((button) => {
+        button.addEventListener("click", addToCart);
     });
+
+    // Mostrar los productos en el carrito al cargar la página
+    updateCartItems();
+});
+
+// Mostrar los productos en las cards
+function displayProducts() {
+    const cardsContainer = document.querySelector(".cards");
+    const html = products
+        .map((product) => `
+        <div class="card" id="card${product.id}">
+          <img src="producto${product.id}.jpg" alt="${product.name}">
+          <h3>${product.name}</h3>
+          <p>Precio: $${product.price}</p>
+          <button class="add-to-cart" data-id="${product.id}">Agregar al carrito</button>
+        </div>
+      `)
+        .join("");
+
+    cardsContainer.innerHTML = html;
+}
+
+// Agregar producto al carrito
+function addToCart(event) {
+    const productId = event.target.getAttribute("data-id");
+    const product = products.find((p) => p.id.toString() === productId);
+    if (product) {
+        // Utilizar el operador spread para clonar el carrito y agregar el nuevo producto
+        cart = [...cart, product];
+        // Guardar el carrito en el storage
+        localStorage.setItem("cart", JSON.stringify(cart));
+        // Actualizar la lista de productos en el carrito
+        updateCartItems();
+    }
+}
+
+// Actualizar la lista de productos en el carrito
+function updateCartItems() {
+    const cartItemsList = document.getElementById("cart-items");
+    const html = cart
+        .map((product) => `<li>${product.name} - Precio: $${product.price}</li>`)
+        .join("");
+
+    cartItemsList.innerHTML = html;
 }
 
 // Función para crear un elemento de producto
