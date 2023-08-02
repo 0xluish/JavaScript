@@ -10,7 +10,7 @@
 <!-- <p>A lo largo del año actualizaré los proyectos del curso Frontend (puedes ver más <a href="https://github.com/0xluish/Carrera-Fullstack">aquí</a>). Da click en cada módulo para ir directamente a su repositorio.</p> -->
 <ol>
     <li><a href="https://github.com/0xluish/Desarrollo-Web">Desarrollo Web</a> (Diciembre 2022 - Febrero 2023)</li>
-    <li><a href="https://github.com/0xluish/JavaScript">JavaScript</a> JavaScript (Mayo 2023 - Julio 2023)</li>
+    <li><a href="https://github.com/0xluish/JavaScript">JavaScript</a> (Mayo 2023 - Julio 2023)</li>
 </ol>
 
 <h2>:mailbox: Feedback:</h2>
