@@ -4,6 +4,7 @@
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .cards {
@@ -11,6 +12,7 @@
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+    overflow: hidden;
 }
 
 .card {
@@ -26,17 +28,24 @@
     object-fit: cover;
 }
 
+.card h3{
+    font-family: 'Poppins', sans-serif;
+}
+
 .cart {
     margin-top: 20px;
     width: 100%;
     max-width: 400px;
     border: 1px solid #ccc;
     padding: 10px;
+    height: 100px;
 }
 
 .cart h2 {
+    font-family: 'Poppins', sans-serif;
     text-align: center;
     margin-top: 0;
+    overflow: hidden;
 }
 
 .cart ul {
@@ -51,4 +60,5 @@
 button {
     display: block;
     margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
 }
