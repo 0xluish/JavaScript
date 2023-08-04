@@ -1,21 +1,23 @@
 // Diseño para los productos que se venderán
 .container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
+    padding: 20px;
 }
 
 .cards {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    justify-content: center;
 }
 
 .card {
     border: 1px solid #ccc;
     padding: 10px;
-    width: 200px;
+    width: calc(33.33% - 20px);
+    max-width: 300px;
 }
 
 .card img {
@@ -25,12 +27,16 @@
 }
 
 .cart {
-    margin-top: 50px;
-    width: 300px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid #ccc;
+    padding: 10px;
 }
 
 .cart h2 {
     text-align: center;
+    margin-top: 0;
 }
 
 .cart ul {

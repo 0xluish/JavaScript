@@ -14,32 +14,6 @@ iframe {
   max-width: 100%;
 }
 
-.avatar {
-  display: flex;
-  border-radius: 50%;
-  height: 260px;
-  width: 260px;
-  max-width: 100%;
-  margin: auto;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Contacto */
-#gridContacto {
-  display: grid;
-  grid-template-areas: "about form";
-  grid-template-rows: 2fr;
-  grid-template-columns: repeat(2, 2fr);
-  row-gap: 10px;
-  column-gap: 10px;
-  margin: 10px;
-}
-
-#about p {
-  margin-top: 10px;
-}
-
 #form {
   grid-area: form;
   display: flex;
@@ -47,7 +21,8 @@ iframe {
   justify-content: center;
   align-items: center;
 }
-#form label, #form input {
+#form label,
+#form input {
   padding: 1px;
   margin: 1px;
 }
@@ -68,50 +43,6 @@ iframe {
   justify-content: end;
 }
 
-#botonesContacto {
-  width: 500px;
-  height: auto;
-  max-width: 100%;
-  margin: 10px;
-  padding: 10px;
-}
-
-.botonContacto {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@media screen and (max-width: 1024px) {
-  #gridContacto {
-    background-color: yellow;
-    display: grid;
-    grid-template-areas: "about" "form";
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, auto);
-    row-gap: 5px;
-    margin: 10px;
-  }
-  #about .avatar {
-    display: flex;
-    border-radius: 50%;
-    height: 100px;
-    width: 100px;
-    max-width: 100%;
-    margin: auto;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-  }
-  #form {
-    justify-content: center;
-    align-items: center;
-  }
-  #form .formulario {
-    justify-content: center;
-    align-items: center;
-  }
-}
 #tipografia-h1 {
   margin-left: 10px;
   padding-top: 2rem;
@@ -136,6 +67,28 @@ iframe {
   margin-left: 10px;
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
+}
+
+#sorting-buttons {
+  margin-bottom: 20px;
+}
+
+#sorting-buttons button {
+  margin-right: 10px;
+}
+
+#botonesContacto {
+  width: 500px;
+  height: auto;
+  max-width: 100%;
+  margin: 10px;
+  padding: 10px;
+}
+
+.botonContacto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #img-logo {
@@ -458,21 +411,23 @@ section {
 
 .container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 100vh;
+  padding: 20px;
 }
 
 .cards {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  justify-content: center;
 }
 
 .card {
   border: 1px solid #ccc;
   padding: 10px;
-  width: 200px;
+  width: calc(33.33% - 20px);
+  max-width: 300px;
 }
 
 .card img {
@@ -482,12 +437,16 @@ section {
 }
 
 .cart {
-  margin-top: 50px;
-  width: 300px;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #ccc;
+  padding: 10px;
 }
 
 .cart h2 {
   text-align: center;
+  margin-top: 0;
 }
 
 .cart ul {

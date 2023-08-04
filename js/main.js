@@ -1,43 +1,47 @@
-// Productos
-const products = [
-    { id: 1, name: "Pegasus 33", price: 100 },
-    { id: 2, name: "Pegasus 34", price: 200 },
-    { id: 3, name: "Pegasus Trail 2", price: 150 }
-];
-
 // Obtener el carrito desde el storage o crear uno vacío
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 // Evento al cargar la página
 document.addEventListener("DOMContentLoaded", () => {
-    // Cargar los productos en las cards
-    displayProducts();
+  // Cargar los productos en las cards
+  fetchProducts();
 
-    // Evento click en los botones "Agregar al carrito"
-    const addToCartButtons = document.querySelectorAll(".add-to-cart");
-    addToCartButtons.forEach((button) => {
-        button.addEventListener("click", addToCart);
-    });
+  // Evento click en los botones "Agregar al carrito"
+  const addToCartButtons = document.querySelectorAll(".add-to-cart");
+  addToCartButtons.forEach((button) => {
+    button.addEventListener("click", addToCart);
+  });
 
-    // Mostrar los productos en el carrito al cargar la página
-    updateCartItems();
+  // Mostrar los productos en el carrito al cargar la página
+  updateCartItems();
 });
+
+// Cargar los productos desde el archivo JSON
+function fetchProducts() {
+  fetch("products.json")
+    .then((response) => response.json())
+    .then((data) => {
+      products = data;
+      displayProducts();
+    })
+    .catch((error) => console.error("Error fetching products:", error));
+}
 
 // Mostrar los productos en las cards
 function displayProducts() {
-    const cardsContainer = document.querySelector(".cards");
-    const html = products
-        .map((product) => `
-        <div class="card" id="card${product.id}">
-          <img src="producto${product.id}.jpg" alt="${product.name}">
-          <h3>${product.name}</h3>
-          <p>Precio: $${product.price}</p>
-          <button class="add-to-cart" data-id="${product.id}">Agregar al carrito</button>
-        </div>
-      `)
-        .join("");
+  const cardsContainer = document.querySelector(".cards");
+  const html = products
+    .map((product) => `
+      <div class="card" id="card${product.id}">
+        <img src="${product.imagePath}" alt="${product.name}">
+        <h3>${product.name}</h3>
+        <p>Precio: $${product.price}</p>
+        <button class="add-to-cart" data-id="${product.id}">Agregar al carrito</button>
+      </div>
+    `)
+    .join("");
 
-    cardsContainer.innerHTML = html;
+  cardsContainer.innerHTML = html;
 }
 
 // Agregar producto al carrito
@@ -108,13 +112,3 @@ function renderProducts(products) {
 
 // Ejemplo de uso: ordenar los productos por precio ascendente al cargar la página
 document.addEventListener('DOMContentLoaded', sortProductsByPriceAsc);
-
-fetch('products.json')
-    .then(response => response.json())
-    .then(data => {
-        const productsData = data;
-        // Resto del código que utiliza productsData
-    })
-    .catch(error => {
-        console.log('Error al cargar los datos del archivo JSON:', error);
-    });
