@@ -3,18 +3,18 @@
         "id": 1,
         "name": "Pegasus 33",
         "price": 100,
-        "imagePath": "Pegasus 33.webp"
+        "imagePath": "Pegasus33.webp"
     },
     {
         "id": 2,
         "name": "Pegasus 34",
         "price": 200,
-        "imagePath": "Pegasus 34.webp"
+        "imagePath": "Pegasus34.webp"
     },
     {
         "id": 3,
         "name": "Pegasus Trail 2",
         "price": 150,
-        "imagePath": "Pegasus Trail 2.webp"
+        "imagePath": "PegasusTrail2.webp"
     }
 ]

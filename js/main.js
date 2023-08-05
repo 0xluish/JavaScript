@@ -27,19 +27,19 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Cargar los productos desde el archivo JSON
-function fetchProducts() {
-  // Solicitud HTTP para obtener el contenido del archivo JSON
-  fetch('products.json')
-    .then(response => response.json()) // Parsear la respuesta JSON
-    .then(data => {
-      // 'data' ahora contiene el array de productos
-      products = data; // Asignar los productos obtenidos a la variable global 'products'
-      displayProducts(products); // Mostrar los productos en las cards
-      updateCartItems(); // Actualizar el carrito después de cargar los productos
-    })
-    .catch(error => {
-      console.error('Error al cargar los productos: ', error);
-    })
+async function fetchProducts() {
+  try {
+    const response = await fetch('../js/products.json'); // Ruta relativa al archivo products.json
+    if (!response.ok) {
+      throw new Error('Error al cargar los productos. Código de respuesta: ' + response.status);
+    }
+    const data = await response.json(); // Parsear la respuesta JSON
+    products = data; // Asignar los productos obtenidos a la variable global 'products'
+    displayProducts(products); // Mostrar los productos en las cards
+    updateCartItems(); // Actualizar el carrito después de cargar los productos
+  } catch (error) {
+    console.error('Error al cargar los productos: ', error.message);
+  }
 }
 
 // Mostrar los productos en las cards
@@ -48,7 +48,7 @@ function displayProducts(products) {
   const html = products
     .map((product) => `
       <div class="card" id="card${product.id}">
-        <img src="${product.imagePath}" alt="${product.name}">
+        <img src="../img/productos/${product.imagePath}" alt="${product.name}">
         <h3>${product.name}</h3>
         <p>Precio: $${product.price}</p>
         <button class="add-to-cart" data-id="${product.id}">Agregar al carrito</button>
@@ -83,7 +83,7 @@ function emptyCart() {
 function updateCartItems() {
   const cartItemsList = document.getElementById("cart-items");
   const html = cart
-    .map((product) => `<li>${product.name} - Precio: $${product.price}</li>`)
+    .map((product) => `<li>${product.name} - $${product.price}</li>`)
     .join("");
 
   cartItemsList.innerHTML = html;
