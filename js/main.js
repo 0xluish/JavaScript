@@ -87,4 +87,8 @@ function updateCartItems() {
     .join("");
 
   cartItemsList.innerHTML = html;
+
+  const totalPrice = cart.reduce((total, product) => total + product.price, 0);
+  const totalElement = document.getElementById("total-price");
+  totalElement.textContent = `$${totalPrice}`;
 }
