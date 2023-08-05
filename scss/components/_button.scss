@@ -1,12 +1,4 @@
 // Botones
-#sorting-buttons {
-    margin-bottom: 20px;
-}
-
-#sorting-buttons button {
-    margin-right: 10px;
-}
-
 #botonesContacto {
     width: 500px;
     height: auto;
@@ -17,6 +9,19 @@
 
 .botonContacto {
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    display: block;
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.cart button{
+    display: flex;
+    flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
 }

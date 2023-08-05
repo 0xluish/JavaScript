@@ -16,24 +16,34 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  // Evento click en el botón "Vaciar carrito"
+  const emptyCartButton = document.getElementById("empty-cart");
+  emptyCartButton.addEventListener("click", () => {
+    emptyCart();
+  });
+
   // Mostrar los productos en el carrito al cargar la página
   updateCartItems();
 });
 
 // Cargar los productos desde el archivo JSON
-async function fetchProducts() {
-    try {
-      const response = await fetch("products.json");
-      products = await response.json();
-      console.log("Productos cargados:", products); // Agregamos este log para verificar el contenido del archivo JSON
-      displayProducts();
-    } catch (error) {
-      console.error("Error fetching products:", error);
-    }
-  }
+function fetchProducts() {
+  // Solicitud HTTP para obtener el contenido del archivo JSON
+  fetch('products.json')
+    .then(response => response.json()) // Parsear la respuesta JSON
+    .then(data => {
+      // 'data' ahora contiene el array de productos
+      products = data; // Asignar los productos obtenidos a la variable global 'products'
+      displayProducts(products); // Mostrar los productos en las cards
+      updateCartItems(); // Actualizar el carrito después de cargar los productos
+    })
+    .catch(error => {
+      console.error('Error al cargar los productos: ', error);
+    })
+}
 
 // Mostrar los productos en las cards
-function displayProducts() {
+function displayProducts(products) {
   const cardsContainer = document.querySelector(".cards");
   const html = products
     .map((product) => `
@@ -60,6 +70,13 @@ function addToCart(productId) {
     // Actualizar la lista de productos en el carrito
     updateCartItems();
   }
+}
+
+// Vaciar el carrito
+function emptyCart() {
+  cart = []; // Vaciar el carrito (creando un nuevo array vacío)
+  localStorage.removeItem("cart"); // Eliminar el carrito del storage
+  updateCartItems(); // Actualizar la lista de productos en el carrito (se mostrará vacío)
 }
 
 // Actualizar la lista de productos en el carrito

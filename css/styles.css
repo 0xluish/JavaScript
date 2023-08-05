@@ -70,14 +70,6 @@ iframe {
   font-size: 1rem;
 }
 
-#sorting-buttons {
-  margin-bottom: 20px;
-}
-
-#sorting-buttons button {
-  margin-right: 10px;
-}
-
 #botonesContacto {
   width: 500px;
   height: auto;
@@ -88,6 +80,19 @@ iframe {
 
 .botonContacto {
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  display: block;
+  margin-top: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+.cart button {
+  display: flex;
+  flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
 }
@@ -413,7 +418,9 @@ section {
 .container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  align-content: center;
   padding: 20px;
   font-family: "Poppins", sans-serif;
 }
@@ -469,12 +476,6 @@ section {
 
 .cart li {
   padding: 5px 0;
-}
-
-button {
-  display: block;
-  margin-top: 10px;
-  font-family: "Poppins", sans-serif;
 }
 
 /*# sourceMappingURL=styles.css.map */
